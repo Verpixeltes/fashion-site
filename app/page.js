@@ -33,20 +33,20 @@ export default function Home() {
             <div className={"mt-96"}>
                 <div className="text-center text-white">
                     {/* First line: YOUR and STYLE side by side */}
-                    <div className="flex space-x-2">
-                        <span className="font-outfit text-4xl tracking-widest">YOUR</span>
-                        <span className="font-originalsurfer text-4xl tracking-wider">STYLE</span>
+                    <div className="flex space-x-2 mt-10">
+                        <span className="font-outfit text-3xl tracking-widest">YOUR</span>
+                        <span className="font-originalsurfer text-3xl tracking-wider">STYLE</span>
                     </div>
                     {/* Second line: YOUR and STATEMENT side by side */}
                     <div className="flex space-x-2 mt-4">
-                        <span className="font-outfit text-4xl tracking-widest">YOUR</span>
-                        <span className="font-originalsurfer text-4xl tracking-wider">STATEMENT</span>
+                        <span className="font-outfit text-3xl tracking-widest">YOUR</span>
+                        <span className="font-originalsurfer text-3xl tracking-wider">STATEMENT</span>
                     </div>
                 </div>
             </div>
             {/* Wrap the button with a Link component */}
             <Link href="/gender">
-                <button className="btn mt-6"><span className="font-outfit">Configure Now</span></button>
+                <button className="btn mb-10"><span className="font-outfit">Configure Now</span></button>
             </Link>
         </div>
     );
