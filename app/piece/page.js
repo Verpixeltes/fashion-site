@@ -22,14 +22,14 @@ export default function Type() {
 
     return (
         <div>
-            <div className="flex flex-col items-center mt-40">
+            <div className="flex flex-col items-center mt-40 ml-10">
                 <span className="font-outfit text-xl tracking-widest mr-4 font-bold text-center">
-                    Now i need what piece
+                    Now I need what piece
                 </span>
 
                 {/* Toggle switch with labels */}
-                <div className="flex items-center mt-4">
-                    <span className="mr-2 font-outfit">Pants</span>
+                <div className="flex items-center justify-center mt-4">
+                    <span className="mr-2 font-outfit">Bottom</span>
                     <label className="switch">
                         <input type="checkbox" checked={toggleChecked} onChange={handleToggle} />
                         <span className="slider round"></span>
@@ -39,7 +39,7 @@ export default function Type() {
 
                 {toggleChecked ? (
                     <div className="flex flex-col gap-4 mt-20 max-w-md ml-12">
-                        {['T-Shirt', 'Hoodie', "Jeans"].map((type) => (
+                        {['T-Shirt', 'Hoodie'].map((type) => (
                             <div key={type} className="gender-item flex items-center">
                                 <div
                                     className={`gender-box ${Selected.includes(type) ? 'selected' : ''}`}
@@ -62,9 +62,8 @@ export default function Type() {
                         ))}
                     </div>
                 )}
+                <VerticalTextContainer />
             </div>
-
-            <VerticalTextContainer />
         </div>
     );
 }

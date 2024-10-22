@@ -12,7 +12,7 @@ export default function Type() {
     };
     return (
         <div>
-            <div className="flex flex-col items-center mt-40">
+            <div className="flex flex-col items-center mt-40 ml-10">
                 <span className="font-outfit text-xl tracking-widest mr-4 font-bold text-center text-center-on-small">
                     So...what do you need?
                 </span>

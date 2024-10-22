@@ -1,8 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';  // Import Link from next/link
-import menu_3 from "./images/menu_3.png";
 import './style.css';
+import backround_video from "./images/backround.mp4"
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
@@ -25,7 +25,11 @@ export default function Home() {
     }
 
     return (
-        <div className="main" style={{ backgroundImage: `url(${menu_3.src})`, backgroundSize: 'cover', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <div className="main" style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <video autoPlay loop muted style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: '-1' }}>
+                <source src={backround_video} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <div className={"mt-96"}>
                 <div className="text-center text-white">
                     {/* First line: YOUR and STYLE side by side */}

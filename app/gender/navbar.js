@@ -38,7 +38,7 @@ const VerticalTextContainer = () => {
     }, []);
 
     return (
-        <div className="absolute left-0 grid gap-4 h-72 w-24 vertical_container"
+        <div className="absolute left-0 grid gap-4 h-72 w-12 vertical_container"
              style={{transform: 'translateY(-50%)'}}>
             <a href="/gender"
                className="transform rotate-90 whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Gender</a>

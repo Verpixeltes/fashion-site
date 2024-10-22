@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import VerticalTextContainer from './navbar.js';
 
+
 export default function Gender() {
     const [selectedGender, setSelectedGender] = useState(null);
 
@@ -12,7 +13,7 @@ export default function Gender() {
 
     return (
         <>
-            <div className="flex flex-col items-center mt-40">
+            <div className="flex flex-col items-center mt-40 ml-10">
                 <span className="font-outfit text-xl tracking-widest ml-3 font-bold text-center text-center-on-small">
                     Please select your gender
                 </span>
