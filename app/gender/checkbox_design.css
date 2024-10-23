@@ -1,0 +1,25 @@
+
+.configurator_checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Breite der "Checkbox" */
+    height: 40px; /* Höhe der "Checkbox" */
+    border: 1px solid #ccc; /* Rahmen */
+    border-radius: 6px; /* Abgerundete Ecken */
+    cursor: pointer; /* Cursor ändern, wenn darüber gefahren wird */
+    transition: background-color 0.2s, border-color 0.2s; /* Smooth Transition */
+    margin-left: -160px;
+    border-color: black;
+}
+
+
+
+.configurator_checkbox.selected {
+    background-color: #F6C492; /* Hintergrundfarbe, wenn ausgewählt */
+    color: white; /* Textfarbe, wenn ausgewählt */
+    border-color: #F6C492;
+}
+
+
+

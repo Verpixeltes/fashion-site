@@ -43,7 +43,7 @@ input:checked + .slider:before {
 }
 
 /* Disabled class for checkboxes */
-.gender-box.disabled {
+.configurator_checkbox.disabled {
     pointer-events: none;
     opacity: 0.5;
 }

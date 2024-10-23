@@ -1,7 +1,7 @@
 "use client";
-import VerticalTextContainer from "@/app/gender/navbar";
+import VerticalTextContainer from "@/app/navbar/navbar";
 import React, { useState } from "react";
-import '../gender/styles.css';
+import '../gender/checkbox_design.css';
 import './piece.css';
 
 export default function Type() {
@@ -38,11 +38,11 @@ export default function Type() {
                 </div>
 
                 {toggleChecked ? (
-                    <div className="flex flex-col gap-4 mt-20 max-w-md ml-12">
+                    <div className="flex flex-col gap-4 mt-4 max-w-md ml-12">
                         {['T-Shirt', 'Hoodie'].map((type) => (
                             <div key={type} className="gender-item flex items-center">
                                 <div
-                                    className={`gender-box ${Selected.includes(type) ? 'selected' : ''}`}
+                                    className={`configurator_checkbox ${Selected.includes(type) ? 'selected' : ''}`}
                                     onClick={() => handleSelect(type)}
                                 />
                                 <p className="font-outfit ml-3 text-xl">{type}</p>
@@ -50,11 +50,11 @@ export default function Type() {
                         ))}
                     </div>
                 ) : (
-                    <div className="flex flex-col gap-4 mt-20 max-w-md ml-12">
+                    <div className="flex flex-col gap-4 mt-4 max-w-md ml-12">
                         {['Cap', 'Scarf', "Gloves", "LOL"].map((type) => (
                             <div key={type} className="gender-item flex items-center">
                                 <div
-                                    className={`gender-box ${Selected.includes(type) ? 'selected' : ''}`}
+                                    className={`configurator_checkbox ${Selected.includes(type) ? 'selected' : ''}`}
                                     onClick={() => handleSelect(type)}
                                 />
                                 <p className="font-outfit ml-3 text-2xl">{type}</p>
