@@ -6,6 +6,7 @@
     border-radius: 10px;
     outline: none;
     transition: background 0.15s ease-in-out;
+    margin-right: 28%;
 }
 
 .slider::-webkit-slider-thumb {
@@ -22,14 +23,10 @@
 .slider::-moz-range-thumb {
     width: 28px; /* Fixed thumb size */
     height: 28px; /* Fixed thumb size */
-    background-color: #4CAF50;
+    background-color: #F6C492;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to the thumb */
-}
-
-.slider:hover {
-    background: #b3b3b3; /* Optional: Change background color on hover */
 }
 
 .font-outfit.text-xl.text-center {

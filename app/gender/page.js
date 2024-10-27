@@ -1,37 +1,53 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './checkbox_design.css';
 import VerticalTextContainer from '../navbar/navbar.js';
 import "./slider.css";
 
-export default function Gender() {
+export default function GenderSelection() {
     const [selectedGender, setSelectedGender] = useState(null);
-    const [sliderValue, setSliderValue] = useState(0);
-    const [isEditing, setIsEditing] = useState(false);
+    const [age, setAge] = useState(0);
+    const [isEditingAge, setIsEditingAge] = useState(false);
 
-    const handleGenderSelect = (gender) => {
+    useEffect(() => {
+        const savedGender = localStorage.getItem('selectedGender');
+        const savedAge = localStorage.getItem('selectedAge');
+
+        if (savedGender) {
+            setSelectedGender(savedGender);
+        }
+
+        if (savedAge) {
+            setAge(Number(savedAge));
+        }
+    }, []);
+
+    const handleGenderClick = (gender) => {
         setSelectedGender(gender);
+        localStorage.setItem('selectedGender', gender);
     };
 
-    const handleSliderChange = (event) => {
-        setSliderValue(event.target.value);
+    const handleAgeSliderChange = (event) => {
+        const newAge = event.target.value;
+        setAge(newAge);
+        localStorage.setItem('selectedAge', newAge);
     };
 
-    const handleSpanClick = () => {
-        setIsEditing(true);
+    const handleAgeSpanClick = () => {
+        setIsEditingAge(true);
     };
 
-    const handleInputChange = (event) => {
-        setSliderValue(event.target.value);
+    const handleAgeInputChange = (event) => {
+        setAge(event.target.value);
     };
 
-    const handleInputBlur = () => {
-        setIsEditing(false);
+    const handleAgeInputBlur = () => {
+        setIsEditingAge(false);
     };
 
-    const handleInputKeyDown = (event) => {
+    const handleAgeInputKeyDown = (event) => {
         if (event.key === 'Enter') {
-            setIsEditing(false);
+            setIsEditingAge(false);
         }
     };
 
@@ -46,32 +62,32 @@ export default function Gender() {
                         <div key={gender} className="gender-item flex items-center">
                             <div
                                 className={`configurator_checkbox ${selectedGender === gender ? 'selected' : ''}`}
-                                onClick={() => handleGenderSelect(gender)}
+                                onClick={() => handleGenderClick(gender)}
                             />
                             <p className="font-outfit ml-3 text-xl">I´m {gender}</p>
                         </div>
                     ))}
                 </div>
                 <div className="flex flex-col items-center mt-8">
-                    <span className=" select-none font-outfit text-xl tracking-widest  font-bold text-center text-center-on-small">
-                        Hmh, yeah I need your age
+                    <span className="select-none font-outfit text-xl tracking-widest mr-10 font-bold text-center text-center-on-small">
+                        Hmh, I need your age
                     </span>
                     <div className="flex justify-center items-center mt-6">
-                        {isEditing ? (
+                        {isEditingAge ? (
                             <input
                                 type="number"
-                                value={sliderValue}
-                                onChange={handleInputChange}
-                                onBlur={handleInputBlur}
-                                onKeyDown={handleInputKeyDown}
+                                value={age}
+                                onChange={handleAgeInputChange}
+                                onBlur={handleAgeInputBlur}
+                                onKeyDown={handleAgeInputKeyDown}
                                 className="font-outfit text-xl text-center"
                             />
                         ) : (
                             <span
                                 className="font-outfit text-xl"
-                                onClick={handleSpanClick}
+                                onClick={handleAgeSpanClick}
                             >
-                                {sliderValue}
+                                {age}
                             </span>
                         )}
                     </div>
@@ -79,13 +95,11 @@ export default function Gender() {
                         type="range"
                         min="0"
                         max="99"
-                        value={sliderValue}
-                        onChange={handleSliderChange}
+                        value={age}
+                        onChange={handleAgeSliderChange}
                         className="slider"
                     />
                     <div className="flex justify-between w-full mt-2">
-                        <span className={"font-outfit"}>0</span>
-                        <span className={"font-outfit"}>99</span>
                     </div>
                 </div>
             </div>

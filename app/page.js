@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';  // Import Link from next/link
 import './style.css';
-import backround_video from "./images/backround.mp4"
+import backround_video from "@/app/videos/backround.mp4"
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
@@ -17,7 +17,7 @@ export default function Home() {
 
         return () => {
             window.removeEventListener('resize', checkDevice);
-        };
+        };       
     }, []);
 
     if (!isMobile) {
@@ -33,14 +33,14 @@ export default function Home() {
             <div className={"mt-80"}>
                 <div className="text-center text-white">
                     {/* First line: YOUR and STYLE side by side */}
-                    <div className="flex space-x-2">
-                        <span className="font-outfit text-3xl tracking-widest">YOUR</span>
-                        <span className="font-originalsurfer text-3xl tracking-wider">STYLE</span>
+                    <div className="flex space-x-2 mt-32">
+                        <span className="font-outfit text-4xl tracking-widest mainText ">YOUR</span>
+                        <span className="font-originalsurfer text-4xl tracking-wider mainText ">STYLE</span>
                     </div>
                     {/* Second line: YOUR and STATEMENT side by side */}
                     <div className="flex space-x-2 ">
-                        <span className="font-outfit text-3xl tracking-widest">YOUR</span>
-                        <span className="font-originalsurfer text-3xl tracking-wider">STATEMENT</span>
+                        <span className="font-outfit  tracking-widest mainText">YOUR</span>
+                        <span className="font-originalsurfer  tracking-wider mainText">STATEMENT</span>
                     </div>
                 </div>
             </div>

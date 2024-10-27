@@ -59,3 +59,12 @@
     color: white;
     background-color: black;
 }
+
+.mainText {
+    font-size: 44px;
+}
+@media (max-width: 382px) {
+    .mainText {
+        font-size: 32px;
+    }
+}

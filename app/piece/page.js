@@ -1,11 +1,15 @@
 "use client";
 import VerticalTextContainer from "@/app/navbar/navbar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../gender/checkbox_design.css';
 import './piece.css';
 
 export default function Type() {
-    const [Selected, setSelected] = useState([]);
+    const [Selected, setSelected] = useState(() => {
+        // Retrieve the stored value from localStorage
+        const storedSelected = localStorage.getItem('selectedPieces');
+        return storedSelected ? JSON.parse(storedSelected) : [];
+    });
     const [toggleChecked, setToggleChecked] = useState(true); // state for the toggle switch
 
     const handleSelect = (type) => {
@@ -20,6 +24,11 @@ export default function Type() {
         setToggleChecked((prev) => !prev); // toggles the checkbox on/off
     };
 
+    useEffect(() => {
+        // Store the selected items in localStorage whenever it changes
+        localStorage.setItem('selectedPieces', JSON.stringify(Selected));
+    }, [Selected]);
+
     return (
         <div>
             <div className="flex flex-col items-center mt-40 ml-10">
@@ -28,7 +37,7 @@ export default function Type() {
                 </span>
 
                 {/* Toggle switch with labels */}
-                <div className="flex items-center justify-center mt-4">
+                <div className="flex items-center justify-center mt-4 mr-10">
                     <span className="mr-2 font-outfit">Bottom</span>
                     <label className="switch">
                         <input type="checkbox" checked={toggleChecked} onChange={handleToggle} />
