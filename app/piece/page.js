@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import VerticalTextContainer from "@/app/navbar/navbar";
 import React, { useState, useEffect } from "react";
 import '../gender/checkbox_design.css';
@@ -6,11 +6,13 @@ import './piece.css';
 
 export default function Type() {
     const [Selected, setSelected] = useState(() => {
-        // Retrieve the stored value from localStorage
-        const storedSelected = localStorage.getItem('selectedPieces');
-        return storedSelected ? JSON.parse(storedSelected) : [];
+        if (typeof window !== 'undefined') {
+            const storedSelected = localStorage.getItem('selectedPieces');
+            return storedSelected ? JSON.parse(storedSelected) : [];
+        }
+        return [];
     });
-    const [toggleChecked, setToggleChecked] = useState(true); // state for the toggle switch
+    const [toggleChecked, setToggleChecked] = useState(true);
 
     const handleSelect = (type) => {
         setSelected((prevSelected) =>
@@ -21,12 +23,13 @@ export default function Type() {
     };
 
     const handleToggle = () => {
-        setToggleChecked((prev) => !prev); // toggles the checkbox on/off
+        setToggleChecked((prev) => !prev);
     };
 
     useEffect(() => {
-        // Store the selected items in localStorage whenever it changes
-        localStorage.setItem('selectedPieces', JSON.stringify(Selected));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedPieces', JSON.stringify(Selected));
+        }
     }, [Selected]);
 
     return (
@@ -36,7 +39,6 @@ export default function Type() {
                     Now I need what piece
                 </span>
 
-                {/* Toggle switch with labels */}
                 <div className="flex items-center justify-center mt-4 mr-10">
                     <span className="mr-2 font-outfit">Bottom</span>
                     <label className="switch">

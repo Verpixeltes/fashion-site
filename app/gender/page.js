@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useState, useEffect } from 'react';
 import './checkbox_design.css';
 import VerticalTextContainer from '../navbar/navbar.js';
@@ -10,27 +10,33 @@ export default function GenderSelection() {
     const [isEditingAge, setIsEditingAge] = useState(false);
 
     useEffect(() => {
-        const savedGender = localStorage.getItem('selectedGender');
-        const savedAge = localStorage.getItem('selectedAge');
+        if (typeof window !== 'undefined') {
+            const savedGender = localStorage.getItem('selectedGender');
+            const savedAge = localStorage.getItem('selectedAge');
 
-        if (savedGender) {
-            setSelectedGender(savedGender);
-        }
+            if (savedGender) {
+                setSelectedGender(savedGender);
+            }
 
-        if (savedAge) {
-            setAge(Number(savedAge));
+            if (savedAge) {
+                setAge(Number(savedAge));
+            }
         }
     }, []);
 
     const handleGenderClick = (gender) => {
         setSelectedGender(gender);
-        localStorage.setItem('selectedGender', gender);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedGender', gender);
+        }
     };
 
     const handleAgeSliderChange = (event) => {
         const newAge = event.target.value;
         setAge(newAge);
-        localStorage.setItem('selectedAge', newAge);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedAge', newAge);
+        }
     };
 
     const handleAgeSpanClick = () => {

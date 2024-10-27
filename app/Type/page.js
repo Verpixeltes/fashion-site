@@ -1,17 +1,21 @@
-"use client";
+'use client';
 import VerticalTextContainer from "@/app/navbar/navbar";
 import React, { useState, useEffect } from "react";
 import '../gender/checkbox_design.css';
 
 export default function Type() {
     const [Selected, setSelected] = useState(() => {
-        // Retrieve the stored value from localStorage
-        return localStorage.getItem('selectedType') || null;
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('selectedType') || null;
+        }
+        return null;
     });
 
     const handleGenderSelect = (type) => {
         setSelected(type);
-        localStorage.setItem('selectedType', type);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedType', type);
+        }
     };
 
     return (
