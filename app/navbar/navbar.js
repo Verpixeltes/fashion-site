@@ -46,9 +46,9 @@ const VerticalTextContainer = () => {
                className="transform rotate-90 whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Type</a>
             <a href="/piece"
                className="transform rotate-90-conditions whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Piece</a>
-            <a href="#"
+            <a href="/size"
                className="transform rotate-90 whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Size</a>
-            <a href="#"
+            <a href="/condition"
                className="transform rotate-90-conditions whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Condition</a>
             <a href="#"
                className="transform rotate-90-conditions whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Style</a>

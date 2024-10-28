@@ -46,7 +46,7 @@ export default function Home() {
             </div>
             {/* Wrap the button with a Link component */}
             <Link href="/gender">
-                <button className="btn mb-10"><span className="font-outfit">Configure Now</span></button>
+                <button className="btn mt-30"><span className="font-outfit">Configure Now</span></button>
             </Link>
         </div>
     );

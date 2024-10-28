@@ -20,10 +20,10 @@
     color: white;
     width: 150px;
     height: 40px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
+    position: fixed;
+
     transform: translateX(-50%);
+
 
 }
 
