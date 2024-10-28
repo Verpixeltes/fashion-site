@@ -30,17 +30,17 @@ export default function Home() {
                 <source src={backround_video} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className={"mt-80"}>
+            <div className={"mt-72"}>
                 <div className="text-center text-white">
                     {/* First line: YOUR and STYLE side by side */}
                     <div className="flex space-x-2 mt-32">
-                        <span className="font-outfit text-4xl tracking-widest mainText ">YOUR</span>
-                        <span className="font-originalsurfer text-4xl tracking-wider mainText ">STYLE</span>
+                        <span className="font-outfit text-3xl tracking-widest mainText ">YOUR</span>
+                        <span className="font-originalsurfer text-3xl tracking-wider mainText ">STYLE</span>
                     </div>
                     {/* Second line: YOUR and STATEMENT side by side */}
                     <div className="flex space-x-2 ">
-                        <span className="font-outfit  tracking-widest mainText">YOUR</span>
-                        <span className="font-originalsurfer  tracking-wider mainText">STATEMENT</span>
+                        <span className="font-outfit text-3xl  tracking-widest mainText">YOUR</span>
+                        <span className="font-originalsurfer text-3xl tracking-wider mainText">STATEMENT</span>
                     </div>
                 </div>
             </div>

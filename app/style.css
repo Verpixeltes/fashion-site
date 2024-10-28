@@ -66,5 +66,13 @@
 @media (max-width: 382px) {
     .mainText {
         font-size: 32px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 400px) {
+    .mainText {
+        font-size: 38px;
+        padding-bottom: 10px;
     }
 }
