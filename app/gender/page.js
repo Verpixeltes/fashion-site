@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './checkbox_design.css';
 import VerticalTextContainer from '../navbar/navbar.js';
-import "./slider.css";
+
 
 export default function GenderSelection() {
     const [selectedGender, setSelectedGender] = useState(null);
@@ -28,14 +28,6 @@ export default function GenderSelection() {
         setSelectedGender(gender);
         if (typeof window !== 'undefined') {
             localStorage.setItem('selectedGender', gender);
-        }
-    };
-
-    const handleAgeSliderChange = (event) => {
-        const newAge = event.target.value;
-        setAge(newAge);
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('selectedAge', newAge);
         }
     };
 
@@ -74,40 +66,7 @@ export default function GenderSelection() {
                         </div>
                     ))}
                 </div>
-                <div className="flex flex-col items-center mt-8">
-                    <span className="select-none font-outfit text-xl tracking-widest mr-10 font-bold text-center text-center-on-small">
-                        Hmh, I need your age
-                    </span>
-                    <div className="flex justify-center items-center mt-6">
-                        {isEditingAge ? (
-                            <input
-                                type="number"
-                                value={age}
-                                onChange={handleAgeInputChange}
-                                onBlur={handleAgeInputBlur}
-                                onKeyDown={handleAgeInputKeyDown}
-                                className="font-outfit text-xl text-center"
-                            />
-                        ) : (
-                            <span
-                                className="font-outfit text-xl"
-                                onClick={handleAgeSpanClick}
-                            >
-                                {age}
-                            </span>
-                        )}
-                    </div>
-                    <input
-                        type="range"
-                        min="0"
-                        max="99"
-                        value={age}
-                        onChange={handleAgeSliderChange}
-                        className="slider"
-                    />
-                    <div className="flex justify-between w-full mt-2">
-                    </div>
-                </div>
+
             </div>
             <VerticalTextContainer />
         </>
