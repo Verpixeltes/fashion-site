@@ -1,8 +1,7 @@
 .text-9xl {
-    font-size: 170px;
+    font-size: 100px;
 }
 .rechteckig-rote-border {
-    border: 2px solid red;
     width: 120px; /* Adjust width as needed */
     height: 200px; /* Adjust height as needed */
     position: fixed;
@@ -18,5 +17,5 @@ span {
 
 span.active {
     color: black; /* Farbe schwarz wenn aktiv */
-    font-size: 190px;
+    font-size: 120px;
 }

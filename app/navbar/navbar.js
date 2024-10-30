@@ -42,6 +42,8 @@ const VerticalTextContainer = () => {
              style={{transform: 'translateY(-50%)'}}>
             <a href="/gender"
                className="transform rotate-90  text-base font-light font-outfit text-gray-300 vtext">Gender</a>
+            <a href="/age_selector"
+               className="transform rotate-90  text-base font-light font-outfit text-gray-300 vtext">age</a>
             <a href="/Type"
                className="transform rotate-90 whitespace-nowrap text-base font-light font-outfit text-gray-300 vtext">Type</a>
             <a href="/piece"

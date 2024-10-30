@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
+import VerticalTextContainer from '../navbar/navbar.js';
 
 const HorizontalScroll = () => {
     const numbers = Array.from({ length: 100 }, (_, i) => i); // Start from 0
@@ -34,7 +35,7 @@ const HorizontalScroll = () => {
         checkActiveSpan();
 
         // Scroll to the initial position to center the number 1
-        const initialScrollPosition = 85; // Adjust this value as needed
+        const initialScrollPosition = 10; // Adjust this value as needed
         container.scrollTo({ left: initialScrollPosition, behavior: 'smooth' });
 
         return () => {
@@ -49,12 +50,20 @@ const HorizontalScroll = () => {
     }, [activeIndex]);
 
     return (
-        <div ref={containerRef} className="font-outfit relative flex mr-32 mt-80 overflow-x-scroll whitespace-nowrap p-5 w-full scrollbar-hide">
-            {numbers.map((number, index) => (
-                <span key={number} className={`mx-7 text-9xl font-bold ${activeIndex === index ? 'active' : ''}`}>
+        <div>
+            <span
+                className="font-outfit text-black absolute top-40 mb-32 text-xl tracking-widest ml-14 font-bold text-center text-center-on-small">
+                Please select your age
+            </span>
+            <div ref={containerRef}
+                 className="font-outfit relative flex  mt-60 overflow-x-scroll whitespace-nowrap p-5 w-full scrollbar-hide">
+                {numbers.map((number, index) => (
+                    <span key={number} className={`mx-7 text-9xl font-bold ${activeIndex === index ? 'active' : ''}`}>
                     {number}
                 </span>
-            ))}
+                ))}
+            </div>
+            <VerticalTextContainer />
         </div>
     );
 };
@@ -63,7 +72,7 @@ export default function Page() {
     return (
         <>
             <div className="rechteckig-rote-border"></div>
-            <HorizontalScroll />
+            <HorizontalScroll/>
         </>
     );
 }
